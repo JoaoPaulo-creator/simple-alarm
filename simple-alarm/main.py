@@ -1,6 +1,6 @@
 from pygame import mixer
 from time import sleep
-from datetime import datetime
+from get_date_time import get_time
 from constants.constants import PATH_TO_MP3_FILE
 from user_input import set_alarm
 
@@ -17,7 +17,7 @@ def main():
     while True:
 
         try:
-            current_clock_hour = datetime.today().strftime('%H:%M')
+            current_clock_hour = get_time()
             hour = str(input(': '))
             minutes = str(input(': '))
             alarm = set_alarm(hour, minutes)
